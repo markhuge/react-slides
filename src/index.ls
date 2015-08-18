@@ -1,10 +1,20 @@
-require! 'react/addons': React
+require! {
+  'react/addons': React
+  './iframe'
+  './speaker-deck': speakerdeck
+}
 
-{ iframe, div } = React.DOM
+{ div } = React.DOM
+
+Iframe      = React.create-factory iframe
+SpeakerDeck = React.create-factory speakerdeck
 
 module.exports = React.create-class({
   render: ->
     div class-name: 'react-slides',
       # Add logic for non-iframe embed in a sec
-      iframe src: @props.url, frame-border: 0, allow-full-screen: true, scrolling: no
+      if @props.service == \speakerdeck
+        SpeakerDeck id: @props.id
+      else
+        Iframe url: @props.url
 })
