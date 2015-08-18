@@ -1,7 +1,29 @@
 # react-slides
 
-## Don't use me yet!
+## Install
 
-I'm being pushed to NPM at v0.0.0 to validate my deployment tooling. My more stable release will be here in a few hours....
+`npm install react-slides --save`
 
+## Usage
 
+### Speakerdeck
+
+```js
+
+var React  = require('react/addons'),
+    slides = require('react-slides'),
+    Slides = React.createFactory(slides);
+
+React.render(<Slides service="speakerdeck" id="mydataid" />, mountNode);
+```
+
+### Generic iFrame
+
+```js
+
+var React  = require('react/addons'),
+    slides = require('react-slides'),
+    Slides = React.createFactory(slides);
+
+React.render(<Slides url="http://my.sweet.presentation.whatever" />, mountNode);
+```
