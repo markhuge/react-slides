@@ -7,20 +7,16 @@
   "description": "A react component for rendering embeded slide presentations",
   "main": "index.js",
   "devDependencies": {
-    "jsdom": "^2.0.0",
+    "jsdom": "2.0.0",
     "livescript": "1.4.0",
-    "mocha": "^2.2.5",
+    "mocha": "2.2.5",
     "uglify-js": "2.4.24"
   },
   "scripts": {
-    "test": "mocha --compilers ls:livescript",
-    "compile": "lsc -p -b -c src/index.ls | uglifyjs -o dist/index.js",
-    "clean": "rm -rf $(pwd)/dist || exit 0 && mkdir -p $(pwd)/dist",
-    "pkg": "cp -R $(pwd)/{package.json,node_modules,README.md} dist/",
-    "dist": " npm run clean && npm run compile && npm run pkg",
-    "pub": "npm run dist && cd $(pwd)/dist && npm publish ."
+    "test": "mocha --compilers ls:livescript"
   },
   "keywords": [
+    "embed",
     "react",
     "slide",
     "deck",
