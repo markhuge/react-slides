@@ -17,7 +17,8 @@
     "compile": "lsc -p -b -c src/index.ls | uglifyjs -o dist/index.js",
     "clean": "rm -rf $(pwd)/dist || exit 0 && mkdir -p $(pwd)/dist",
     "pkg": "cp -R $(pwd)/{package.json,node_modules,README.md} dist/",
-    "dist": " npm run clean && npm run compile && npm run pkg"
+    "dist": " npm run clean && npm run compile && npm run pkg",
+    "pub": "npm run dist && cd $(pwd)/dist && npm publish ."
   },
   "keywords": [
     "react",
