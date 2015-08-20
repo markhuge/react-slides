@@ -3,7 +3,7 @@
     "react": "0.13.3"
   },
   "name": "react-slides",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A react component for rendering embeded slide presentations",
   "main": "index.js",
   "devDependencies": {
